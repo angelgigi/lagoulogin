@@ -334,12 +334,6 @@ body {
     min-height:100%;
     background-color:#fff
 }
-.sso_header {
-    position:relative;
-    width:100%;
-    height:323px;
-    background-color:#00b38a
-}
 .sso_header .logo {
     position:absolute;
     z-index:9999;

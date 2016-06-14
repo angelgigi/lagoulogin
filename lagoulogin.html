@@ -11,20 +11,46 @@
   </header>
   <section class="content_box cleafix">
       <div class="before"></div>
-       <div class="left_area fl">
+       <div class="left_area">
            <form action="javascript;">
                <div class="form_body" data-view="loginviem">
-                 <input>
+                  <div class="input_item">
+                      <input type="text" name="username" class="input input_white" placeholder="请输入已验证手机/邮箱" >
+                  </div>
+                  <div class="input_item">
+                      <input type="text" name="password" class="input input_white" placeholder="请输入密码">
+                  </div>
+                   <div class="input_item">
+                       <a href="https://passport.lagou.com/accountPwd/toReset.html">忘记密码？</a>
+                   </div>
+                   <div class="input_item btn btn-button">
+                       <input type="submit" class="btn btn_green btn_active" value="登&nbsp;录">
+                   </div>
+                   <div class="input_item clearfix">
+                       <h5 class="reg_now">还没有拉勾帐号？<a href="../register/register.html">立即注册</a></h5>
+                   </div>
                </div>
            </form>
        </div>
-      <div class="divider fl">
-
+      <div class="divider">
+          <img src="https://www.lgstatic.com/passport/static/pc/modules/common/img/divider-login_3362138.jpg" alt="分割线">
       </div>
-      <div class="right_area fl">
-
+      <div class="right_area f1">
+          <h5>使用以下帐号直接登录:</h5>
+          <ul class="vender_login clearfix">
+              <li><a href="/oauth20/auth_sinaWeiboProvider.html" title="使用新浪微博帐号登录" class="vender_icon icon_sina" target="_blank"></a></li>
+              <li><a href="/oauth20/auth_qqProvider.html" title="使用腾讯QQ帐号登录" class="vender_icon icon_tencent" target="_blank"></a></li>
+              <li class="last_child"><a href="/oauth20/auth_weixinProvider.html" class="vender_icon icon_wechat" title="使用微信帐号登录" target="_blank"></a></li>
+          </ul>
+          <div class="qrcode">
+              <img src="https://www.lgstatic.com/passport/static/pc/modules/common/img/qrcode_0ec6bff.jpg" alt="二维码">
+              <p>[ 扫码下载拉勾APP ]</p>
+          </div>
       </div>
       <div class="after"></div>
   </section>
+  <footer>
+      <h4 class="slogn">— 专注互联网职业机会 —</h4>
+  </footer>
 </body>
 </html>
