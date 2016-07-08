@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="register.css" type="text/css">
+    <script src="../jquery-2.0.0.min.js"></script>
+    <script src="register.js"></script>
+
+</head>
+<body>
+   <header class="sso_header">
+        <a href="http://www.lagou.com" class="logo"></a>
+   </header>
+   <section class="content_box cleafix">
+       <div class="left_area fl">
+           <form action="" method="">
+               <ul class="form_head clearfix">
+                   <li class="active">
+                       <i class="icon icon_phone"></i>
+                       手机号码注册
+                   </li>
+                   <li class="">
+                       <i class="icon icon_mail"></i>
+                       邮箱注册
+                   </li>
+                   <span class="tab_active" ></span>
+               </ul>
+               <div class="form_body" data-view="phoneRegister"   >
+                   <div class="input_item clearfix" data-propertyname="phone" data-controltype="Phone" style="display: block;">
+                       <input type="text" class="input input_white" id="username" name="username" placeholder="请输入常用手机号码" data-required="required" autocomplete="off">
+                   </div>
+                   <div class="input_item clearfix"  style="display: block;">
+                       <input type="text" class="input input_white fl" style="width:130px; display:block;" name="" placeholder="请证明你不是机器人" data-required="required" autocomplete="off">
+                       <img class="yzm" src="https://passport.lagou.com/vcode/create?from=register&amp;refresh=1467788360995">
+                       <a href="" class="reflash"></a>
+                   </div>
+                   <div class="input_item" data-propertyname="phoneVerificationCode" data-controltype="PhoneVerificationCode" style="display: block;">
+                       <div class="input_group clearfix">
+                           <input type="text" class="input input_white first_child" id="" name="" placeholder="请输入短信验证码" data-required="required" autocomplete="off">
+                           <input type="button" class="btn btn_green btn_active btn_lg last_child" value="获取验证码" data-required="required">
+                       </div>
+                   </div>
+                   <div class="input_item clearfix" data-propertyname="password" data-controltype="Password" style="display: block;">
+                       <input type="password" class="input input_white" id="password" name="password" placeholder="请输入密码" data-required="required" autocomplete="off">
+                   </div>
+
+                   <div class="input_item clearfix" data-propertyname="type" data-controltype="Switch" style="display: block;">
+                       <input type="button" class="btn btn_outline btn_lg" value="找工作">
+                       <input type="button" class="btn btn_outline btn_lg last_child" value="招人">
+                   </div>
+                   <div class="input_item clearfix" style="margin-top: 16px; display: block;" >
+                       <label for="checkbox" class="box_checkbox">
+                           <span class="checkbox_icon" style="background-position: -13px 3px;"></span>
+                           <input type="checkbox" value="" id="checkbox" class="checkbox" data-myvalue="agred" data-text="我已阅读并同意" checked="checked">我已阅读并同意
+                           <a href="http://www.lagou.com/privacy.html" target="_blank" style="color:#00b38a">《拉勾用户协议》</a>
+                       </label>
+                   </div>
+                   <div class="input_item clearfix" data-propertyname="submit" data-controltype="Botton" style="display: block;">
+                       <input type="button" class="btn btn_green btn_active btn_block btn_lg" value="注&nbsp;册">
+                   </div>
+               </div>
+               <div class="form_body" data-view="emailRegister"  style="display: none" >
+                   <div class="input_item clearfix" data-propertyname="email" data-controltype="Email" style="display: block;">
+                       <input type="text" class="input input_white" name="" placeholder="请输入常用邮箱地址" data-required="required" autocomplete="off">
+                   </div>
+                   <div class="input_item clearfix" data-propertyname="password" data-controltype="Password" style="display: block;">
+                       <input type="password" class="input input_white" name="" placeholder="请输入密码" data-required="required" autocomplete="off">
+                   </div>
+                   <div class="input_item clearfix" data-propertyname="request_form_verifyCode" data-controltype="VerifyCode" style="display: none;">
+                       <input type="text" class="input input_white fl" style="width:130px; display:block;" name="" placeholder="请证明你不是机器人" data-required="required" autocomplete="off">
+                       <img class="yzm" src="https://passport.lagou.com/vcode/create?from=register&amp;refresh=1467788360995">
+
+                       <a href="javascript:;" class="reflash"></a>
+                   </div>
+                   <div class="input_item clearfix" data-propertyname="type" data-controltype="Switch" style="display: block;">
+                       <input type="button" class="btn btn_outline btn_lg" value="找工作" data-myvalue="0">
+                       <input type="button" class="btn btn_outline btn_lg last_child" value="招人" data-myvalue="1">
+                   </div>
+                   <div class="input_item clearfix" data-propertyname="protocol" data-controltype="CheckBox" style="display: block;">
+                       <label for="checkbox2" class="box_checkbox">
+                           <span class="checkbox_icon" style="background-position: -13px 3px;"></span>
+                           <input type="checkbox" value="" id="checkbox2" class="checkbox" data-myvalue="agred" data-text="我已阅读并同意" checked="checked">我已阅读并同意
+                           <a href="http://www.lagou.com/privacy.html" target="_blank" style="color:#00b38a">《拉勾用户协议》</a>
+                       </label>
+                   </div>
+                   <div class="input_item clearfix" data-propertyname="submit" data-controltype="Botton" style="display: block;">
+                       <input type="button" class="btn btn_green btn_active btn_block btn_lg" value="注&nbsp;册">
+                   </div>
+               </div>
+           </form>
+       </div>
+       <div class="divider fl">
+           <img src="https://www.lgstatic.com/passport/static/pc/modules/common/img/divider_a3c3658.jpg" alt="分割线">
+       </div>
+
+       <div class="right_area fl">
+           <h5>已有拉勾帐号:</h5>
+           <a href="http://localhost:63342/lagoulogin/lagoulogin/lagoulogin.html" class="login_now">直接登录</a>
+           <h5>使用以下帐号直接登录:</h5>
+           <ul class="vender_login clearfix">
+               <li><a href="#" title="使用新浪微博帐号登录" class="vender_icon icon_sina" ></a></li>
+               <li><a href="#" title="使用腾讯QQ帐号登录" class="vender_icon icon_tencent" ></a></li>
+               <li class="last_child"><a href="#" class="vender_icon icon_wechat" title="使用微信帐号登录" ></a></li>
+           </ul>
+           <div class="qrcode">
+               <img src="https://www.lgstatic.com/passport/static/pc/modules/common/img/qrcode_0ec6bff.jpg" alt="二维码">
+               <p>[ 扫码下载拉勾APP ]</p>
+           </div>
+       </div>
+   </section>
+   <footer>
+       <h4 class="slogn">— 专注互联网职业机会 —</h4>
+   </footer>
+</body>
+</html>

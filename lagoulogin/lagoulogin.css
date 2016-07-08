@@ -40,7 +40,7 @@ ul {
     display: inline-block;
     width: 128px;
     height: 54px;
-    background: url(images/logo_13bcdf6.png)left top no-repeat;
+    background: url(../images/logo_13bcdf6.png)left top no-repeat;
 }
 .content_box {
     position: relative;
@@ -48,6 +48,8 @@ ul {
     margin: -168px auto 0 auto;
     padding: 50px 47px 60px 57px;
     background-color: #fff;
+    border-radius:2px;
+    box-shadow: 0 0 5px rgba(0,0,0,.09);
     display: table;
 }
 .content_box .before{
@@ -94,7 +96,7 @@ ul {
     position: relative;
     width: 272px;
     height: 44px;
-    padding: 0px 13px;
+    padding: 0 13px;
     color: #333333;
     border: 1px solid;
     border-radius: 2px;
@@ -104,7 +106,18 @@ ul {
     border-color: #fbfbfb;
     background-color: #fbfbfb;
 }
-
+.content_box .input_tip{
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin-top: 5px;
+    line-height:18px;
+    padding-left: 20px;
+    background: url(https://www.lgstatic.com/passport/static/common/static/img/info_5a35a92.png)left no-repeat;
+}
+.content_box .input_warning,.dropbtn_warning{
+    border-color: red;
+}
 .input:focus{
     border-color:#00b38a;
 }
@@ -150,7 +163,7 @@ ul {
     color:#00b38a;
     padding-right:23px;
     background:url(https://www.lgstatic.com/passport/static/pc/modules/common/img/icon-arrow-right_f36c0d6.png) right center no-repeat;
-    margin-top: 0px;
+    margin-top: 0;
     width: 87px;
 }
 .content_box h5 {
@@ -226,3 +239,103 @@ h4{
     text-align: center;
     color:#d1d1d1 ;
 }
+@media only screen and (min-width: 400px) and (max-width: 1024px){
+    body{
+        min-width:100%;
+        min-height:100%;
+        background-color: #fff;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+        font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
+    }
+
+    .login_header{
+        position: relative;
+        width: 100%;
+        height: 100px;
+        margin-right: 10px;
+        background-color: #00b38a;
+    }
+    .login_header .logo{
+        display: none;
+    }
+    .content_box {
+        position: relative;
+        width:50%;
+        margin:  auto 0 auto;
+        padding: 30px 20px 40px 48px;
+        background-color: #fff;
+        display: table;
+    }
+    .content_box .before{
+        display: none;
+    }
+    .content_box .after{
+        display: none;
+    }
+    .content_box .left_area{
+        width: 300px;
+        height:263px;
+        display: block;
+    }
+    .right_area{
+        display: none;
+    }
+    .content_box .divider img {
+       display: none;
+    }
+    .slogn{
+   display: none;
+    }
+}
+    @media only screen and (max-width: 400px){
+        body{
+            min-width:100%;
+            min-height:100%;
+            background-color: #fff;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
+        }
+
+        .login_header{
+            position: relative;
+            width: 100%;
+            height: 100px;
+            margin-right: 10px;
+            background-color: #00b38a;
+        }
+        .login_header .logo{
+            display: none;
+        }
+        .content_box {
+            position: relative;
+            width:50%;
+            margin:  auto 0 auto;
+            padding: 30px 0 40px 15px;
+            background-color: #fff;
+            display: table;
+        }
+        .content_box .before{
+            display: none;
+        }
+        .content_box .after{
+            display: none;
+        }
+        .content_box .left_area{
+            width: 300px;
+            height:263px;
+            display: block;
+        }
+        .right_area{
+            display: none;
+        }
+        .content_box .divider img {
+            display: none;
+        }
+        .slogn{
+            display: none;
+        }
+    }

@@ -187,8 +187,8 @@
     border-color:#00b38a
 }
 .input_warning,.dropbtn_warning {
-    border-color:#ff4351
-}
+     border-color:#ff4351
+ }
 .input_group:after {
     clear:both;
     _overflow:hidden

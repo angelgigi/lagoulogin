@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索职位</title>
+    <link href="searchlogin.css" rel="stylesheet" type="text/css">
+    <link href="../bootstrap.css">
+    <script type="text/javascript" src="../jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="toggle.js"></script>
+</head>
+<body>
+<div id="lg_header">
+
+    <!--C端头部黑色导航-->
+    <div id="lg_tbar">
+        <div class="inner">
+            <div id="lg_lbar">
+                <a href="http://www.lagou.com/app/download.html" class="lg_app" target="_blank">拉勾APP</a>
+                <a href="http://hr.lagou.com/dashboard/" class="lg_os" target="_blank">进入企业版</a>
+            </div>
+
+            <div id="lg_rbar">
+                <ul>
+                    <li><a href="http://localhost:63342/lagoulogin/lagoulogin/lagoulogin.html" target="_blank">登录</a></li>
+                    <li><a href="#"  target="_blank" class="bl">注册</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end #lg_tbar-->
+
+    <!--C端头部白色导航-->
+    <div id="lg_nav">
+        <div class="inner">
+            <div id="lg_lnav">
+                <a href="http://www.lagou.com/" class="lg_logo" target="_parent">
+                    <h1>拉勾网</h1>
+                </a>
+            </div>
+            <ul class="lg_nav_wrap">
+                <li><a href="http://www.lagou.com/" class="current">首页</a></li>
+                <li><a href="http://www.lagou.com/gongsi/">公司</a></li>
+                <li><a href="http://pai.lagou.com/index.html" target="_blank">一拍</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+<!--end #header-->
+<!--页面主体-->
+  <div id="content-container">
+      <!-- 搜索输入框模块 -->
+       <div class="search-wrapper">
+           <div id="searchBar" class="search-bar">
+               <div class="input-wrapper">
+                   <div class="keyword-wrapper">
+                       <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                       <input type="text" id="keyword" autocomplete="off" maxlength="64" placeholder="搜索职位、公司或地点" value="" class="ui-autocomplete-input">
+                   </div>
+                   <input type="button" id="submit" value="搜索">
+
+               </div>
+               <div class="tab-wrapper">
+                   <a id="tab_pos" class="active" href="javascript:;">职位 ( <span>500+</span>  ) </a>
+                   <a id="tab_comp" class="disabled" href="javascript:;">公司 ( <span>0</span>  ) </a>
+               </div>
+           </div>
+       </div>
+      <!--主体 -->
+      <div id="main_container">
+          <!--左侧-->
+          <div class="content_left">
+              <!-- 依次填入左侧各个模块 -->
+
+              <!--当前为公司标签时，隐藏筛选条件栏-->
+              <div id="positionHead" class="">
+                  <!-- 公司卡片 -->
+                  <!-- 筛选 -->
+
+                  <ul id="filterBox" class="filter-wrapper">
+                      <li class="li-taller brief dn" id="filterBrief">
+                          <span class="title">工作地点：</span>
+                          <a href="javascript:;" class="active">上海</a>
+                          <span class="title">工作经验：</span>
+                          <a href="javascript:;" class="active">不限</a>
+                          <span class="title">学历要求：</span>
+                          <a href="javascript:;" class="active">不限</a>
+                          <span class="title">融资阶段：</span>
+                          <a href="javascript:;" class="active">不限</a>
+                          <span class="title">行业领域：</span>
+                          <a href="javascript:;" class="active">不限</a>
+                      </li>
+                      <div class="details" id="filterCollapse">
+                          <div class="has-more">
+                              <div class="more more-positions workPosition unfolded">
+                                  <li class="hot">
+                                      <span class="title">工作地点：</span>
+                                      <a href="javascript:;" class="more-city-name">全国</a>
+                                      <a href="javascript:;"  class="more-city-name">北京</a>
+                                      <a href="javascript:;" class="active">上海</a>
+                                      <a href="javascript:;">深圳</a>
+                                      <a href="javascript:;" >广州</a>
+                                      <a href="javascript:;" >杭州</a>
+                                      <a href="javascript:;" >成都</a>
+                                      <a href="javascript:;" >南京</a>
+                                      <a href="javascript:;">武汉</a>
+                                      <a href="javascript:;" >西安</a>
+                                      <a href="javascript:;">厦门</a>
+                                      <a href="javascript:;" >长沙</a>
+                                      <a href="javascript:;" >苏州</a>
+                                      <a href="javascript:;" >天津</a>
+                                  </li>
+                                  <li class="other">
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0001
+                                                    " data-lg-tj-cid="idnull" data-id="8" class="more-city-name">重庆</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0002
+                                                    " data-lg-tj-cid="idnull" data-id="719" class="more-city-name">郑州</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0003
+                                                    " data-lg-tj-cid="idnull" data-id="703" class="more-city-name">青岛</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0004
+                                                    " data-lg-tj-cid="idnull" data-id="664" class="more-city-name">合肥</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0005
+                                                    " data-lg-tj-cid="idnull" data-id="681" class="more-city-name">福州</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0006
+                                                    " data-lg-tj-cid="idnull" data-id="702" class="more-city-name">济南</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0007
+                                                    " data-lg-tj-cid="idnull" data-id="600" class="more-city-name">大连</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0008
+                                                    " data-lg-tj-cid="idnull" data-id="766" class="more-city-name">珠海</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0009
+                                                    " data-lg-tj-cid="idnull" data-id="636" class="more-city-name">无锡</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0010
+                                                    " data-lg-tj-cid="idnull" data-id="768" class="more-city-name">佛山</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0011
+                                                    " data-lg-tj-cid="idnull" data-id="779" class="more-city-name">东莞</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0012
+                                                    " data-lg-tj-cid="idnull" data-id="654" class="more-city-name">宁波</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0013
+                                                    " data-lg-tj-cid="idnull" data-id="638" class="more-city-name">常州</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0014
+                                                    " data-lg-tj-cid="idnull" data-id="599" class="more-city-name">沈阳</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0015
+                                                    " data-lg-tj-cid="idnull" data-id="565" class="more-city-name">石家庄</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0016
+                                                    " data-lg-tj-cid="idnull" data-id="831" class="more-city-name">昆明</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0017
+                                                    " data-lg-tj-cid="idnull" data-id="691" class="more-city-name">南昌</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0018
+                                                    " data-lg-tj-cid="idnull" data-id="785" class="more-city-name">南宁</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0019
+                                                    " data-lg-tj-cid="idnull" data-id="622" class="more-city-name">哈尔滨</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0020
+                                                    " data-lg-tj-cid="idnull" data-id="799" class="more-city-name">海口</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0021
+                                                    " data-lg-tj-cid="idnull" data-id="780" class="more-city-name">中山</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0022
+                                                    " data-lg-tj-cid="idnull" data-id="773" class="more-city-name">惠州</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0023
+                                                    " data-lg-tj-cid="idnull" data-id="822" class="more-city-name">贵阳</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0024
+                                                    " data-lg-tj-cid="idnull" data-id="613" class="more-city-name">长春</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0025
+                                                    " data-lg-tj-cid="idnull" data-id="576" class="more-city-name">太原</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0026
+                                                    " data-lg-tj-cid="idnull" data-id="656" class="more-city-name">嘉兴</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0027
+                                                    " data-lg-tj-cid="idnull" data-id="710" class="more-city-name">泰安</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0028
+                                                    " data-lg-tj-cid="idnull" data-id="" class="more-city-name">昆山</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0029
+                                                    " data-lg-tj-cid="idnull" data-id="707" class="more-city-name">烟台</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0030
+                                                    " data-lg-tj-cid="idnull" data-id="864" class="more-city-name">兰州</a>
+                                      <a href="javascript:;" data-lg-tj-id="8q00" data-lg-tj-no="
+                                                            0031
+                                                    " data-lg-tj-cid="idnull" data-id="685" class="more-city-name">泉州</a>
+                                      <a href="javascript:;" id="all_city">全部城市 > </a>
+                                  </li>
+                              </div>
+
+                              <!-- 处理工作地点深层选择-->
+                              <div class="choose-detail">
+                                  <li class="position-head">
+
+                                      <div class="current-handle-position">
+                                          <span class="title">工作地点：</span>
+                                          <a class="current_city current">上海</a>
+                                          <i class="current_city_arrow right-arrow"></i>
+                                          <a class="current_district current active">不限</a>
+                                      </div>
+
+                                      <div class="other-hot-city">
+                                          <div class="city-wrapper dn" style="margin-left: 208px; width: 664px; overflow: hidden; display: block;">
+                                              <a data-id="$workcity.id" class="hot-city-name">全国</a>
+                                              <a data-id="5" class="hot-city-name">北京</a>
+                                              <a data-id="765" class="hot-city-name">深圳</a>
+                                              <a data-id="763" class="hot-city-name">广州</a>
+                                              <a data-id="653" class="hot-city-name">杭州</a>
+                                              <a data-id="801" class="hot-city-name">成都</a>
+                                              <a data-id="635" class="hot-city-name">南京</a>
+                                              <a data-id="736" class="hot-city-name">武汉</a>
+                                              <a data-id="854" class="hot-city-name">西安</a>
+                                              <a data-id="682" class="hot-city-name">厦门</a>
+                                              <a data-id="749" class="hot-city-name">长沙</a>
+                                              <a data-id="639" class="hot-city-name">苏州</a>
+                                              <a data-id="7" class="hot-city-name">天津</a>
+                                          </div>
+                                          <a class="btn-more" id="" href="">更多&ensp;<i></i></a>
+                                      </div>
+
+                                  </li>
+                                  <li class="detail-district-area">
+                                      <span class="title">行政区：</span>
+                                      <a class="active">不限</a>
+                                      <a >浦东新区</a>
+                                      <a >徐汇区</a>
+                                      <a >长宁区</a>
+                                      <a >普陀区</a>
+                                      <a >杨浦区</a>
+                                      <a >闵行区</a>
+                                      <a >黄浦区</a>
+                                      <a >闸北区</a>
+                                      <a >静安区</a>
+                                      <a >虹口区</a>
+                                      <a >宝山区</a>
+                                      <a >嘉定区</a>
+                                      <a >松江区</a>
+                                      <a >青浦区</a>
+                                      <a >奉贤区</a>
+                                      <a >金山区</a>
+                                      <a >崇明县</a>
+                                  </li>
+                              </div>
+                          </div>
+                          <li class="multi-chosen"><span class="title">工作经验：</span>
+                              <a href="javascript:;" class="active">不限</a>
+                              <a href="javascript:;">应届毕业生<i class="delete"></i></a>
+                              <a href="javascript:;" >3年及以下<i class="delete"></i></a>
+                              <a href="javascript:;" >3-5年<i class="delete"></i></a>
+                              <a href="javascript:;" >5-10年<i class="delete"></i></a>
+                              <a href="javascript:;">10年以上<i class="delete"></i></a>
+                              <a href="javascript:;">不要求<i class="delete"></i>
+                              </a>
+                          </li>
+                          <li class="multi-chosen"><span class="title">学历要求：</span>
+
+                              <a href="javascript:;" class="active" data-lg-tj-id="8s00" data-lg-tj-no="
+                                                            0001
+                                                    " data-lg-tj-cid="idnull">不限
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8s00" data-lg-tj-no="
+                                                                    0002
+                                                            " data-lg-tj-cid="idnull">大专
+                                  <i class="delete"></i>
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8s00" data-lg-tj-no="
+                                                                    0003
+                                                            " data-lg-tj-cid="idnull">本科
+                                  <i class="delete"></i>
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8s00" data-lg-tj-no="
+                                                                    0004
+                                                            " data-lg-tj-cid="idnull">硕士
+                                  <i class="delete"></i>
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8s00" data-lg-tj-no="
+                                                                    0005
+                                                            " data-lg-tj-cid="idnull">博士
+                                  <i class="delete"></i>
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8s00" data-lg-tj-no="
+                                                                    0006
+                                                            " data-lg-tj-cid="idnull">不要求
+                                  <i class="delete"></i>
+                              </a>
+
+                          </li>
+                          <li class="multi-chosen"><span class="title">融资阶段：</span>
+                              <a href="javascript:;" class="active" data-lg-tj-id="8t00" data-lg-tj-no="
+                                                            0001
+                                                    " data-lg-tj-cid="idnull">不限
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8t00" data-lg-tj-no="
+                                                                    0002
+                                                            " data-lg-tj-cid="idnull">未融资
+                                  <i class="delete"></i>
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8t00" data-lg-tj-no="
+                                                                    0003
+                                                            " data-lg-tj-cid="idnull">天使轮
+                                  <i class="delete"></i>
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8t00" data-lg-tj-no="
+                                                                    0004
+                                                            " data-lg-tj-cid="idnull">A轮
+                                  <i class="delete"></i>
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8t00" data-lg-tj-no="
+                                                                    0005
+                                                            " data-lg-tj-cid="idnull">B轮
+                                  <i class="delete"></i>
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8t00" data-lg-tj-no="
+                                                                    0006
+                                                            " data-lg-tj-cid="idnull">C轮
+                                  <i class="delete"></i>
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8t00" data-lg-tj-no="
+                                                                    0007
+                                                            " data-lg-tj-cid="idnull">D轮及以上
+                                  <i class="delete"></i>
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8t00" data-lg-tj-no="
+                                                                    0008
+                                                            " data-lg-tj-cid="idnull">上市公司
+                                  <i class="delete"></i>
+                              </a>
+                              <a href="javascript:;" data-lg-tj-id="8t00" data-lg-tj-no="
+                                                                    0009
+                                                            " data-lg-tj-cid="idnull">不需要融资
+                                  <i class="delete"></i>
+                              </a>
+                          </li>
+                          <div class="has-more hy-area">
+                              <li class="multi-chosen">
+                                  <span class="title">行业领域：</span>
+                                  <a href="javascript:;" >不限</a>
+                                  <a href="javascript:;" >移动互联网<i class="delete"></i></a>
+                                  <a href="javascript:;">电子商务<i class="delete"></i></a>
+                                  <a href="javascript:;">金融<i class="delete"></i></a>
+                                  <a href="javascript:;">企业服务<i class="delete"></i></a>
+                                  <a href="javascript:;" >教育<i class="delete"></i></a>
+                                  <a href="javascript:;">文化娱乐<i class="delete"></i></a>
+                                  <a href="javascript:;">游戏<i class="delete"></i></a>
+                                  <a href="javascript:;">O2O<i class="delete"></i></a>
+                                  <a href="javascript:;" data-lg-tj-id="8u00" data-lg-tj-no="
+                                                                    0010
+                                                            " data-lg-tj-cid="idnull">硬件
+                                      <i class="delete"></i>
+                                  </a>
+                                  <span class="btn-more-hy" href="">更多&ensp;<i></i></span>
+                              </li>
+                              <div class="more-hy more-fields">
+                                  <li class="hot multi-chosen">
+                                      <span class="title">行业领域：</span>
+                                      <a href="javascript:;" class="active" data-lg-tj-id="8u00" data-lg-tj-no="
+                                                                    0001
+                                                            " data-lg-tj-cid="idnull">不限
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8v00" data-lg-tj-no="
+                                                                    0002
+                                                            " data-lg-tj-cid="idnull">移动互联网
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8v00" data-lg-tj-no="
+                                                                    0003
+                                                            " data-lg-tj-cid="idnull">电子商务
+                                          <i class="delete"></i>
+                                      <a href="javascript:;" data-lg-tj-id="8v00" data-lg-tj-no="
+                                                                    0004
+                                                            " data-lg-tj-cid="idnull">金融
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8v00" data-lg-tj-no="
+                                                                    0005
+                                                            " data-lg-tj-cid="idnull">企业服务
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8v00" data-lg-tj-no="
+                                                                    0006
+                                                            " data-lg-tj-cid="idnull">教育
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8v00" data-lg-tj-no="
+                                                                    0007
+                                                            " data-lg-tj-cid="idnull">文化娱乐
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8v00" data-lg-tj-no="
+                                                                    0008
+                                                            " data-lg-tj-cid="idnull">游戏
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8v00" data-lg-tj-no="
+                                                                    0009
+                                                            " data-lg-tj-cid="idnull">O2O
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8v00" data-lg-tj-no="
+                                                                    0010
+                                                            " data-lg-tj-cid="idnull">硬件
+                                          <i class="delete"></i>
+                                      </a>
+                                  </a>
+                                  </li>
+
+                                  <li class="other multi-chosen other-hy">
+                                      <a href="javascript:;" data-lg-tj-id="8w00" data-lg-tj-no="
+                                                                    0001
+                                                            " data-lg-tj-cid="idnull">社交网络
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8w00" data-lg-tj-no="
+                                                                    0002
+                                                            " data-lg-tj-cid="idnull">旅游
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8w00" data-lg-tj-no="
+                                                                    0003
+                                                            " data-lg-tj-cid="idnull">医疗健康
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8w00" data-lg-tj-no="
+                                                                    0004
+                                                            " data-lg-tj-cid="idnull">生活服务
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8w00" data-lg-tj-no="
+                                                                    0005
+                                                            " data-lg-tj-cid="idnull">信息安全
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8w00" data-lg-tj-no="
+                                                                    0006
+                                                            " data-lg-tj-cid="idnull">数据服务
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8w00" data-lg-tj-no="
+                                                                    0007
+                                                            " data-lg-tj-cid="idnull">广告营销
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8w00" data-lg-tj-no="
+                                                                    0008
+                                                            " data-lg-tj-cid="idnull">分类信息
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8w00" data-lg-tj-no="
+                                                                    0009
+                                                            " data-lg-tj-cid="idnull">招聘
+                                          <i class="delete"></i>
+                                      </a>
+                                      <a href="javascript:;" data-lg-tj-id="8w00" data-lg-tj-no="
+                                                                    0010
+                                                            " data-lg-tj-cid="idnull">其他
+                                          <i class="delete"></i>
+                                      </a>
+                                  </li>
+                              </div>
+                          </div>
+                      </div>
+
+                  </ul>
+                  <div class="btn-collapse-wrapper">
+                      <a class="btn-collapse " title="点击收起筛选项" href="javascript:"></a>
+                  </div>
+                  <!--排序-->
+                  <ul class="order" id="order">
+                      <li class="wrapper">
+                          <div class="item order">
+                              <span class="title">排序方式：</span>
+                              <a href="http://www.lagou.com/jobs/list_?px=default&city=全国#order" data-lg-tj-id="8x00" data-lg-tj-no="0001" data-lg-tj-cid="idnull">默认</a>
+                              <a href="javascript:;" class="active" data-lg-tj-id="8x00" data-lg-tj-no=" 0002 " data-lg-tj-cid="idnull">最新</a>
+                          </div>
+                          <div class="item salary selectUI">
+                              <span class="title">月薪：</span>
+                              <div class="selectUI-text text"><span>不限</span><i></i>
+                                  <ul>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&city=全国#order" data-lg-tj-id="8y00" data-lg-tj-no="
+                                                            0001
+                                                    " data-lg-tj-cid="idnull">不限</a></li>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&yx=2k以下&city=全国#order" data-lg-tj-id="8y00" data-lg-tj-no="
+                                                            0002
+                                                    " data-lg-tj-cid="idnull">2k以下</a></li>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&yx=2k-5k&city=全国#order" data-lg-tj-id="8y00" data-lg-tj-no="
+                                                            0003
+                                                    " data-lg-tj-cid="idnull">2k-5k</a></li>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&yx=5k-10k&city=全国#order" data-lg-tj-id="8y00" data-lg-tj-no="
+                                                            0004
+                                                    " data-lg-tj-cid="idnull">5k-10k</a></li>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&yx=10k-15k&city=全国#order" data-lg-tj-id="8y00" data-lg-tj-no="
+                                                            0005
+                                                    " data-lg-tj-cid="idnull">10k-15k</a></li>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&yx=15k-25k&city=全国#order" data-lg-tj-id="8y00" data-lg-tj-no="
+                                                            0006
+                                                    " data-lg-tj-cid="idnull">15k-25k</a></li>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&yx=25k-50k&city=全国#order" data-lg-tj-id="8y00" data-lg-tj-no="
+                                                            0007
+                                                    " data-lg-tj-cid="idnull">25k-50k</a></li>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&yx=50k以上&city=全国#order" data-lg-tj-id="8y00" data-lg-tj-no="
+                                                            0008
+                                                    " data-lg-tj-cid="idnull">50k以上</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="item type selectUI">
+                              <span class="title">工作性质：</span>
+                              <div class="selectUI-text value text"><span>不限</span><i></i>
+                                  <ul>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&city=全国#order" data-lg-tj-id="8z00" data-lg-tj-no="
+                                                            0001
+                                                    " data-lg-tj-cid="idnull">不限</a></li>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&gx=全职&city=全国#order" data-lg-tj-id="8z00" data-lg-tj-no="
+                                                            0002
+                                                    " data-lg-tj-cid="idnull">全职</a></li>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&gx=兼职&city=全国#order" data-lg-tj-id="8z00" data-lg-tj-no="
+                                                            0003
+                                                    " data-lg-tj-cid="idnull">兼职</a></li>
+                                      <li><a href="http://www.lagou.com/jobs/list_?px=new&gx=实习&city=全国#order" data-lg-tj-id="8z00" data-lg-tj-no="
+                                                            0004
+                                                    " data-lg-tj-cid="idnull">实习</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="item page">
+                              <div class="prev ban">
+                                  &lt;
+                              </div>
+                              <div class="next ">
+                                  &gt;
+                              </div>
+                              <div class="page-number">
+                                  <span class="curNum">1</span>
+                                  /
+                                  <span class="span totalNum">30</span>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+               </div>
+
+              <!-- 公司列表 -->
+
+              <div class="company_list dn" id="company_list">
+
+                  <ul class="item_con_list"></ul>
+
+
+               </div>
+              <script id="empty-comp" type="text/html" >
+                  <div class="empty_position">
+                      <div class="pic"></div>
+                      <div class="txt">
+                          <div>暂时没有符合该搜索条件的公司</div>
+                          <span>请重新修改搜索条件后再进行搜索</span>
+                      </div>
+                  </div>
+              </script>
+              <!-- 职位列表 -->
+               <div class="s_position_list" id="s_position_list " >
+                   <ul class="item_con_list" style="display: block;">
+                       <li class="con_list_item first_row" data-index="0" data-positionid="2052587" data-salary="20k-30k" data-company="中能源" data-positionname="前端架构工程师" data-companyid="133656">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2052587.html" target="_blank" data-index="0" data-lg-tj-id="8E00" data-lg-tj-no=" 0100" data-lg-tj-cid="2052587">
+                                           <h2>前端架构工程师</h2>
+                                           <span class="add">[<em>北京·阜成门</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:28发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">20k-30k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验1-3年 / 大专
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/133656.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0100" data-lg-tj-cid="133656">中能源</a>
+                                   </div>
+                                   <div class="industry">
+                                       移动互联网 · 金融 / 成熟型(不需要融资)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/133656.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no=" 0100" data-lg-tj-cid="133656">
+                                       <img src="http://www.lagou.com/i/image/M00/35/0A/CgqKkVdXsFWAPhhfAAX2PnZpy_0613.png" alt="中能源" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“现代化办公场地，季度奖金+年度奖金”</div>
+                               <div class="li_b_r">
+                                  <span>坦诚</span>
+                                   <span>专注</span>
+                                   <span>分享</span>
+                                   <span>点赞</span>
+                               </div>
+                           </div>
+                       </li>
+
+                       <li class="con_list_item" data-index="1" data-positionid="2052586" data-salary="18k-35k" data-company="奈睿" data-positionname="资深JAVA开发工程师" data-companyid="137114">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2052586.html" target="_blank" data-index="1" data-lg-tj-id="8E00" data-lg-tj-no="0101"data-lg-tj-cid="2052586">
+                                           <h2>资深JAVA开发工程师</h2>
+                                           <span class="add">[<em>杭州·西溪</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:28发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">18k-35k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验3-5年 / 本科
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/137114.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0101" data-lg-tj-cid="137114">奈睿</a></div>
+                                   <div class="industry">
+                                       移动互联网 · 企业服务 / 初创型(未融资)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/137114.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no="0101" data-lg-tj-cid="137114">
+                <img src="http://www.lagou.com/i/image/M00/40/BE/Cgp3O1d7TtiAPPigAAEfnOer00E241.png" alt="奈睿" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“支付宝合作伙伴 待遇优 大牛多”</div>
+                               <div class="li_b_r">
+                                   <span>美女多</span>
+                                   <span>带薪年假</span>
+                                   <span>年底双薪</span>
+                                   <span>股票期权</span>
+                               </div>
+                           </div>
+                       </li>
+
+                       <li class="con_list_item" data-index="2" data-positionid="2052585" data-salary="3k-5k" data-company="深圳市达摩电子商务有限公司" data-positionname="大客户经理" data-companyid="104481">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2052585.html" target="_blank" data-index="2" data-lg-tj-id="8E00" data-lg-tj-no="0102" data-lg-tj-cid="2052585">
+                                           <h2>大客户经理</h2>
+                                           <span class="add">[<em>重庆·解放碑</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:28发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">3k-5k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验1-3年 / 本科
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/104481.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0102" data-lg-tj-cid="104481">
+                                           深圳市达摩电子商务有限公司</a>
+                                   </div>
+                                   <div class="industry">
+                                       电子商务 / 初创型(天使轮)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/104481.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no="0102" data-lg-tj-cid="104481">
+                                       <img src="http://www.lagou.com/image2/M00/12/BF/CgpzWlY4nNyAVyMgAAAQ6EQdbkQ542.jpg?cc=0.7393521894700825" alt="深圳市达摩电子商务有限公司" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“五险一金 年终分红 年度旅游”</div>
+                               <div class="li_b_r">
+                                   <span>技能培训</span>
+                                   <span>节日礼物</span>
+                                   <span>带薪年假</span>
+                                   <span>绩效奖金</span>
+                               </div>
+                           </div>
+                       </li>
+                       <li class="con_list_item" data-index="3" data-positionid="2052584" data-salary="2k-4k" data-company="赢时胜软件" data-positionname="前台/总机/接待" data-companyid="30605">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2052584.html" target="_blank" data-index="3" data-lg-tj-id="8E00" data-lg-tj-no=" 0103 " data-lg-tj-cid="2052584">
+                                           <h2>前台/总机/接待</h2>
+                                           <span class="add">[<em>北京</em>]</span>
+          </a>
+                                       <span class="format-time">14:28发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">2k-4k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验不限 / 大专
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/30605.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0103" data-lg-tj-cid="30605">赢时胜软件</a>
+                                   </div>
+                                   <div class="industry">
+                                       金融 / 上市公司
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/30605.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no="  0103 " data-lg-tj-cid="30605"><img src="http://www.lagou.com/i/image/M00/13/51/CgqKkVbnZ52AYLVRAALVGclrAtY201.png" alt="赢时胜软件" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“上市公司 发展前景好”</div>
+
+                               <div class="li_b_r">
+                                  <span>活动多多</span>
+                                   <span>氛围轻松</span>
+                                   <span>自研产品</span>
+                                   <span>上市公司</span>
+                               </div>
+                           </div>
+                       </li>
+                       <li class="con_list_item" data-index="4" data-positionid="2016594" data-salary="10k-15k" data-company="慕课网" data-positionname="高级BD经理" data-companyid="6040">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2016594.html" target="_blank" data-index="4" data-lg-tj-id="8E00" data-lg-tj-no=" 0104" data-lg-tj-cid="2016594">
+                                           <h2>高级BD经理</h2>
+                                           <span class="add">[<em>北京·马甸</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:28发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">10k-15k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验1-3年 / 大专
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/6040.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no=" 0104 " data-lg-tj-cid="6040">慕课网</a>
+                                   </div>
+                                   <div class="industry">
+                                       移动互联网 · 教育 / 成长型(不需要融资)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/6040.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no=" 0104" data-lg-tj-cid="6040">
+                                       <img src="http://www.lagou.com/image1/M00/0C/6C/Cgo8PFT1X2uAUbGsAABCAddtkWg960.jpg" alt="慕课网" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“五险一金 补充医疗 节日福利 员工旅游”</div>
+                               <div class="li_b_r">
+                                   <span>节日礼物</span>
+                                   <span>技能培训</span>
+                                   <span>节日礼品卡</span>
+                                   <span>月度团建</span>
+                               </div>
+                           </div>
+                       </li>
+
+                       <li class="con_list_item" data-index="5" data-positionid="2016606" data-salary="8k-15k" data-company="慕课网" data-positionname="新媒体运营" data-companyid="6040">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2016606.html" target="_blank" data-index="5" data-lg-tj-id="8E00" data-lg-tj-no="0105" data-lg-tj-cid="2016606">
+                                           <h2>新媒体运营</h2>
+                                           <span class="add">[<em>北京·马甸</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:28发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">8k-15k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验1-3年 / 大专
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/6040.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0105" data-lg-tj-cid="6040"> 慕课网</a>
+                                   </div>
+                                   <div class="industry">
+                                       移动互联网 · 教育 / 成长型(不需要融资)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/6040.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no="0105" data-lg-tj-cid="6040">
+                                       <img src="http://www.lagou.com/image1/M00/0C/6C/Cgo8PFT1X2uAUbGsAABCAddtkWg960.jpg" alt="慕课网" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“五险一金 补充医疗 节日福利 员工旅游”</div>
+                               <div class="li_b_r">
+                                   <span>节日礼物</span>
+                                   <span>技能培训</span>
+                                   <span>节日礼品卡</span>
+                                   <span>月度团建</span>
+                               </div>
+                           </div>
+                       </li>
+                       <li class="con_list_item" data-index="6" data-positionid="2052583" data-salary="4k-8k" data-company="小i机器人" data-positionname="产品专员（应届生也可）" data-companyid="48693">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2052583.html" target="_blank" data-index="6" data-lg-tj-id="8E00" data-lg-tj-no="0106 " data-lg-tj-cid="2052583">
+                                           <h2>产品专员（应届生也可）</h2>
+                                           <span class="add">[<em>上海</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:28发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">4k-8k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验1-3年 / 大专
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/48693.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no=" 0106 " data-lg-tj-cid="48693">小i机器人</a>
+                                   </div>
+                                   <div class="industry">
+                                       企业服务 · 数据服务 / 上市公司
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/48693.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no=" 0106 " data-lg-tj-cid="48693">
+                                       <img src="http://www.lagou.com/image1/M00/00/7F/CgYXBlTUXcuALYlaAABjJIrjM2E435.jpg" alt="小i机器人" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“储备产品经理 上市公司 智能硬件 未来科技”</div>
+                               <div class="li_b_r">
+                                   <span>节日礼物</span>
+                                   <span>技能培训</span>
+                                   <span>绩效奖金</span>
+                                   <span>年度旅游</span>
+                               </div>
+                           </div>
+                       </li>
+
+                       <li class="con_list_item" data-index="7" data-positionid="2052582" data-salary="5k-8k" data-company="中兴海丝路" data-positionname="类目运营与采购经理" data-companyid="29834">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2052582.html" target="_blank" data-index="7" data-lg-tj-id="8E00" data-lg-tj-no="0107" data-lg-tj-cid="2052582">
+                                           <h2>类目运营与采购经理</h2>
+                                           <span class="add">[<em>福州·五凤</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:27发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">5k-8k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验3-5年 / 大专
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/29834.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0107" data-lg-tj-cid="29834">中兴海丝路</a>
+                                   </div>
+                                   <div class="industry">
+                                       电子商务 / 初创型(未融资)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/29834.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no=" 0107" data-lg-tj-cid="29834">
+                                       <img src="http://www.lagou.com/image1/M00/00/42/CgYXBlTUXM-ATmgmAAA1yq2UQkI712.jpg" alt="中兴海丝路" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“双休，六险一金，良好的平台和前景”</div>
+                               <div class="li_b_r">
+                                   <span>五险一金</span>
+                                   <span>午餐补助</span>
+                                   <span>双休</span>
+                                   <span>交通补助</span>
+                               </div>
+                           </div>
+                       </li>
+
+                       <li class="con_list_item" data-index="8" data-positionid="2011530" data-salary="15k-23k" data-company="宜信" data-positionname="宜人贷--内控主管" data-companyid="3786">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2011530.html" target="_blank" data-index="8" data-lg-tj-id="8E00" data-lg-tj-no="0108" data-lg-tj-cid="2011530">
+                                           <h2>宜人贷--内控主管</h2>
+                                           <span class="add">[<em>北京·管庄</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:27发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">15k-23k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验3-5年 / 本科
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/3786.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0108" data-lg-tj-cid="3786">宜信</a>
+
+                                   </div>
+                                   <div class="industry">
+                                       移动互联网 · 金融 / 成熟型(D轮及以上)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/3786.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no="0108 " data-lg-tj-cid="3786">
+                                       <img src="http://www.lagou.com/i/image/M00/01/C8/Cgp3O1Z3lASAVbZHAABCha8eqHY645.jpg" alt="宜信" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“六险一金;带薪年假;领导nice”</div>
+                               <div class="li_b_r">
+                                   <span>管理规范</span>
+                                   <span>技能培训</span>
+                                   <span>扁平管理</span>
+                                   <span>弹性工作</span>
+
+                               </div>
+                           </div>
+                       </li>
+
+                       <li class="con_list_item" data-index="9" data-positionid="2052581" data-salary="10k-20k" data-company="苏小研" data-positionname="工会管理(J10071)" data-companyid="73994">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2052581.html" target="_blank" data-index="9" data-lg-tj-id="8E00" data-lg-tj-no=" 0109" data-lg-tj-cid="2052581">
+                                           <h2>工会管理(J10071)</h2>
+                                           <span class="add">[<em>苏州·高新区</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:27发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">10k-20k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验3-5年 / 本科
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/73994.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no=" 0109" data-lg-tj-cid="73994">苏小研</a>
+                                   </div>
+                                   <div class="industry">
+                                       移动互联网 / 成熟型(不需要融资)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/73994.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no="0109" data-lg-tj-cid="73994">
+                                   <img src="http://www.lagou.com/image1/M00/34/AA/CgYXBlWZM6eAaS8jAACThgxkLUU188.jpg" alt="苏小研" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“交通补贴、通讯补贴、免费班车、节日福利”</div>
+                               <div class="li_b_r">
+                                   <span>年底双薪</span>
+                                   <span>节日礼物</span>
+                                   <span>技能培训</span>
+                                   <span>绩效奖金</span>
+                               </div>
+                           </div>
+                       </li>
+
+                       <li class="con_list_item" data-index="10" data-positionid="1974184" data-salary="8k-15k" data-company="宜信" data-positionname="基金运营会计" data-companyid="3786">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+
+                                       <a class="position_link" href="http://www.lagou.com/jobs/1974184.html" target="_blank" data-index="10" data-lg-tj-id="8E00" data-lg-tj-no=" 0110" data-lg-tj-cid="1974184">
+                                       <h2>基金运营会计</h2>
+                                           <span class="add">[<em>北京</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:27发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">8k-15k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验1-3年 / 本科
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/3786.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0110 " data-lg-tj-cid="3786">宜信</a>
+                                   </div>
+                                   <div class="industry">
+                                       移动互联网 · 金融 / 成熟型(D轮及以上)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/3786.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no="0110" data-lg-tj-cid="3786">
+                                       <img src="http://www.lagou.com/i/image/M00/01/C8/Cgp3O1Z3lASAVbZHAABCha8eqHY645.jpg" alt="宜信" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“六险一金;带薪年假;领导nice”</div>
+                               <div class="li_b_r">
+                                   <span>管理规范</span>
+                                   <span>技能培训</span>
+                                   <span>扁平管理</span>
+                                   <span>弹性工作</span>
+                               </div>
+                           </div>
+                       </li>
+
+                       <li class="con_list_item" data-index="11" data-positionid="1711115" data-salary="4k-6k" data-company="蕴德丰" data-positionname="文案策划" data-companyid="124824">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+                                       <a class="position_link" href="http://www.lagou.com/jobs/1711115.html" target="_blank" data-index="11" data-lg-tj-id="8E00" data-lg-tj-no=" 0111" data-lg-tj-cid="1711115">
+                                           <h2>文案策划</h2>
+                                           <span class="add">[<em>深圳·上梅林</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:27发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">4k-6k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验1-3年 / 大专
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/124824.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0111" data-lg-tj-cid="124824">蕴德丰</a>
+                                   </div>
+                                   <div class="industry">
+                                       金融 / 初创型(不需要融资)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/124824.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no="0111" data-lg-tj-cid="124824">
+                <img src="http://www.lagou.com/i/image/M00/20/BD/CgqKkVcPBnyADdmiAAALRiOx8Bc569.png" alt="蕴德丰" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“五险一金 员工下午茶 员工旅游”</div>
+                               <div class="li_b_r">
+                               </div>
+                           </div>
+                       </li>
+
+                       <li class="con_list_item" data-index="12" data-positionid="1722697" data-salary="4k-6k" data-company="蕴德丰" data-positionname="全盘会计" data-companyid="124824">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+
+                                       <a class="position_link" href="http://www.lagou.com/jobs/1722697.html" target="_blank" data-index="12" data-lg-tj-id="8E00" data-lg-tj-no=" 0112 " data-lg-tj-cid="1722697">
+                                           <h2>全盘会计</h2>
+                                           <span class="add">[<em>深圳·后海</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:27发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">4k-6k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验1-3年 / 大专
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/124824.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0112" data-lg-tj-cid="124824">蕴德丰</a>
+                                   </div>
+                                   <div class="industry">
+                                       金融 / 初创型(不需要融资)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/124824.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no="0112" data-lg-tj-cid="124824">
+                <img src="http://www.lagou.com/i/image/M00/20/BD/CgqKkVcPBnyADdmiAAALRiOx8Bc569.png" alt="蕴德丰" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“五险一金 优越的办公环境”</div>
+                               <div class="li_b_r">
+                               </div>
+                           </div>
+                       </li>
+
+                       <li class="con_list_item" data-index="13" data-positionid="2052580" data-salary="10k-20k" data-company="优集品" data-positionname="视频编辑" data-companyid="22343">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2052580.html" target="_blank" data-index="13" data-lg-tj-id="8E00" data-lg-tj-no="0113" data-lg-tj-cid="2052580">
+                                           <h2>视频编辑</h2>
+                                           <span class="add">[<em>北京</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:27发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">10k-20k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验3-5年 / 本科
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/22343.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0113" data-lg-tj-cid="22343">优集品</a>
+                                   </div>
+                                   <div class="industry">
+                                       电子商务 / 成熟型(C轮)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/22343.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no="0113" data-lg-tj-cid="22343">
+                <img src="http://www.lagou.com/i/image/M00/15/54/Cgp3O1brhimAXVvfAAAP30_8Zz8474.jpg" alt="优集品" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“c轮融资 广阔的晋升空间 团队积极向上”</div>
+                               <div class="li_b_r">
+                                   <span>五险一金</span>
+                                   <span>带薪年假</span>
+                                   <span>节日礼物</span>
+                                   <span>午餐补助</span>
+                               </div>
+                           </div>
+                       </li>
+
+                       <li class="con_list_item" data-index="14" data-positionid="2052578" data-salary="2k-4k" data-company="DreamLab梦工坊" data-positionname="市场助理（全职/实习）" data-companyid="131049">
+                           <div class="list_item_top">
+                               <div class="position">
+                                   <div class="p_top">
+
+                                       <a class="position_link" href="http://www.lagou.com/jobs/2052578.html" target="_blank" data-index="14" data-lg-tj-id="8E00" data-lg-tj-no="0114" data-lg-tj-cid="2052578">
+                                           <h2>市场助理（全职/实习）</h2>
+                                           <span class="add">[<em>杭州·西湖区</em>]</span>
+                                       </a>
+                                       <span class="format-time">14:27发布</span>
+                                   </div>
+                                   <div class="p_bot">
+                                       <span class="money">2k-4k</span>
+                                       <div class="li_b_l">
+                                           <!--<i></i>-->经验不限 / 大专
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="company">
+                                   <div class="company_name">
+                                       <a href="http://www.lagou.com/gongsi/131049.html" target="_blank" data-lg-tj-id="8F00" data-lg-tj-no="0114" data-lg-tj-cid="131049">DreamLab梦工坊</a>
+                                   </div>
+                                   <div class="industry">
+                                       数据服务 · 电子商务 / 初创型(天使轮)
+                                   </div>
+                               </div>
+                               <div class="com_logo">
+                                   <a href="http://www.lagou.com/gongsi/131049.html" target="_blank" data-lg-tj-id="8G00" data-lg-tj-no="0114" data-lg-tj-cid="131049">
+                <img src="http://www.lagou.com/i/image/M00/2F/31/CgqKkVdCyfiAH_hdAAAMCLbajLE691.jpg" alt="DreamLab梦工坊" width="60" height="60"></a>
+                               </div>
+                           </div>
+                           <div class="list_item_bot">
+                               <div class="li_b_l">“资源丰富,有潜力”</div>
+                               <div class="li_b_r">
+                                   <span>年底双薪</span>
+                                   <span>定期体检</span>
+                                   <span>绩效奖金</span>
+                                   <span>扁平管理</span>
+                               </div>
+                           </div>
+                       </li>
+                   </ul>
+                   <!-- 相关搜索 -->
+                   <div class="related_search dn">
+                       <div class="r_search_tit">相关搜索：</div>
+                       <ul class="r_search_con">
+                       </ul>
+                   </div>
+                   <!-- 分页 -->
+                   <div class="item_con_pager"><div class="pager_container">
+                      <span hidefocus="hidefocus" action="prev" class="pager_prev pager_prev_disabled"><strong class="pager_lgthen pager_lgthen_dis">
+
+                      </strong>上一页
+                      </span>
+                       <span hidefocus="hidefocus" page="1" class="pager_is_current">1</span>
+                       <span hidefocus="hidefocus" page="2" class="pager_not_current">2</span>
+                       <span hidefocus="hidefocus" page="3" class="pager_not_current">3</span>
+                       ···
+                       <span hidefocus="hidefocus" page="30" class="pager_not_current">30</span>
+                      <span hidefocus="hidefocus" action="next" class="pager_next ">下一页<strong class="pager_lgthen "></strong>
+                      </span>
+                   </div>
+                   </div>
+
+          </div>
+          </div>
+          <!--右侧-->
+          <div class="content_right">
+              <!-- 最近浏览 -->
+              <div class="history">
+
+                  <h2 class="title">最近浏览过</h2>
+                  <ul class="position_list" id="position_list">
+                      <li class="p_list_item" data-positionid="1636903" data-salary="4k-6k" data-company="上海旅烨互联网有限公司" data-positionname="web前端后台软件开发">
+                         <div class="position_link">
+                              <a href="http://www.lagou.com/jobs/1636903.html" target="_blank" class="name" title="web前端后台软件开发">web前端后台软件开发</a>
+                              <div class="salary">4k-6k</div><div class="c_name" title="上海旅烨互联网有限公司">上海旅烨互联网有限公司</div>
+                         </div>
+                      </li>
+                      <li class="p_list_item" data-positionid="1162604" data-salary="3k-6k" data-company="方付通" data-positionname="web前端实习生">
+                          <div class="position_link">
+                              <a href="http://www.lagou.com/jobs/1162604.html" target="_blank" class="name" title="web前端实习生">web前端实习生</a>
+                              <div class="salary">3k-6k</div>
+                              <div class="c_name" title="方付通">方付通</div></div>
+                      </li>
+                      <li class="p_list_item" data-positionid="2040153" data-salary="7k-9k" data-company="丰趣海淘" data-positionname="网页设计师">
+                          <div class="position_link">
+                              <a href="http://www.lagou.com/jobs/2040153.html" target="_blank" class="name" title="网页设计师">网页设计师</a>
+                              <div class="salary">7k-9k</div><div class="c_name" title="丰趣海淘">丰趣海淘</div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+              <!-- 广告位  -->
+              <!--qq群广告位-->
+              <div key="SPACE_KEY_ZHIWEISOUSUOYE_QQQUN" keywordSelector="#keyword" style="margin-bottom: 15px;"></div>
+              <!--广告位-->
+              <div key="ZHIWEISOUSUOYE_GUANGGAOWEI1" class="lgad_jsonp ad_exposure" style="margin-bottom: 15px;">
+                  <a href="http://www.lagou.com/app/download.html?source=search_app?labelWords=hot" data-lg-tj-id="aY00" data-lg-tj-no="idnull" data-lg-tj-cid="157" target="_blank" rel="nofollow">
+                      <img src="http://www.lagou.com/i/image/M00/30/79/Cgp3O1dGmeqAPt4pAAAbFK0gdis577.PNG" style="height: 73px;">
+                  </a>
+              </div>
+              <div key="ZHIWEISOUSUOYE_GUANGGAOWEI2" class="lgad_jsonp ad_exposure" style="margin-bottom: 15px;"></div>
+              <div key="ZHIWEISOUSUOYE_GUANGGAOWEI3" class="lgad_jsonp ad_exposure" style="margin-bottom: 15px;"></div>
+              <div key="ZHIWEISOUSUOYE_GUANGGAOWEI4" class="lgad_jsonp ad_exposure" style="margin-bottom: 15px;"></div>
+              <div key="ZHIWEISOUSUOYE_GUANGGAOWEI5" class="lgad_jsonp ad_exposure" style="margin-bottom: 15px;"></div>
+              <div key="ZHIWEISOUSUOYE_GUANGGAOWEI6" class="lgad_jsonp ad_exposure" style="margin-bottom: 15px;"></div>
+              <div key="ZHIWEISOUSUOYE_GUANGGAOWEI7" class="lgad_jsonp ad_exposure" style="margin-bottom: 15px;">
+                  <a href="http://www.lagou.com/topic/zhiweishanghaijgsD3.html" data-lg-tj-id="aW00" data-lg-tj-no="idnull" data-lg-tj-cid="580" target="_blank" rel="nofollow">
+                      <img src="http://www.lagou.com/i/image/M00/3F/9C/Cgp3O1d4s3qAV61AAABNIsu-9lM266.JPG" style="width: 210px; height: 73px;">
+                  </a>
+              </div>
+              <div key="ZHIWEISOUSUOYE_GUANGGAOWEI8" class="lgad_jsonp ad_exposure" style="margin-bottom: 15px;"></div>
+              <div key="ZHIWEISOUSUOYE_GUANGGAOWEI9" class="lgad_jsonp ad_exposure" style="margin-bottom: 15px;"></div>
+              <div key="ZHIWEISOUSUOYE_GUANGGAOWEI10" class="lgad_jsonp ad_exposure" style="margin-bottom: 15px;"></div>
+              <div key="ZHIWEISOUSUOYE_GUANGGAOWEI11" class="lgad_jsonp ad_exposure" style="margin-bottom: 15px;">
+                  <a href="http://www.lagou.com/gongsi/j50889.html" data-lg-tj-id="e600" data-lg-tj-no="idnull" data-lg-tj-cid="635" target="_blank" rel="nofollow">
+                      <img src="http://www.lagou.com/i/image/M00/40/93/CgqKkVd7G1CABfy0AABMX_JBwbY080.JPG" style="width: 210px; height: 73px;">
+                  </a>
+              </div>
+              </div>
+
+              <!-- 待验证 广告位 -->
+
+
+
+       </div>
+  </div>
+<!--回到顶部-->
+<a id="backtop" title="回到顶部" rel="nofollow" style="display: inline;"></a>
+
+<!--我要反馈按钮-->
+<div id="product-fk">
+    <div id="feedback-icon">
+        <div class="fb-icon"></div>
+        <span>我要反馈</span>
+    </div>
+</div>
+<div id="feedback-con" style="bottom: 80px;display: none">
+    <div class="pfb-pho-close">
+        <div class="pfb-pho"></div>
+        <div class="pfb-close" id="pfb-close"></div>
+    </div>
+    <em class="error dn">
+        <span>你还没填任何反馈呢</span>
+        <i></i>
+    </em>
+    <form id="product-fb">
+        <div class="pfb-txt">
+            <textarea placeholder="我是拉勾的产品经理哈丁，把你遇到的问题，或是想要的功能告诉我吧（200字以内）" maxlength="200px"></textarea>
+        </div>
+        <div class="pfb-email" style="height: 60px">
+            <input type="text" name="email" placeholder="留下邮箱方便我们沟通（选填）">
+            <span class="ensure">确定</span>
+        </div>
+    </form>
+</div>
+
+<!--footer-->
+<div id="footer">
+    <div class="wrapper">
+        <i class="footer_lagou_icon"></i>
+        <div class="inner_wrapper">
+            <a class="footer_app" href="http://www.lagou.com/app/download.html" rel="nofollow">拉勾APP
+                <span>new</span>
+                <img src="http://www.lagou.com/image2/M00/24/1D/CgqLKVaLdtWAKVC3AAEEpK9-Koc598.JPG" width="256" height="256">
+            </a>
+            <a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">拉勾微博</a>
+            <a class="footer_qr" href="javascript:void(0)" rel="nofollow">拉勾微信
+                <img src="http://www.lagou.com/image2/M00/18/45/CgpzWlZNl0qAZitPAABXEpAOJx0071.JPG" width="242" height="242">
+            </a>
+            <a href="http://www.lagou.com/topic/whatisnew.html" target="_blank" rel="nofollow">版本更新</a>
+            <a href="http://www.lagou.com/qa.html?t=1" target="_blank" rel="nofollow">帮助中心</a>
+            <a href="http://www.lagou.com/about.html" target="_blank" rel="nofollow">联系我们</a>
+            <a id="onlineService" href="javascript:void(0);" rel="nofollow">在线交流</a>
+            <span class="tel">服务热线：<em>400-605-9900 (9:00 -18:00)</em></span>
+        </div>
+        <div class="copyright">
+            <span><em>&copy;</em>2016 Lagou </span>
+            <a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" rel="nofollow">京ICP备14023790号-2</a>
+            <span>京公网安备11010802017116号</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
