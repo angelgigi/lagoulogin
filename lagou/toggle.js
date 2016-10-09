@@ -66,7 +66,7 @@ $(document).ready(function () {
             .scrollTop && 0 == document.body.scrollTop ? void $("#backtop").css("background-position-x", "0") : void(
             scrolldelay = setTimeout(c, 2))
     }
-    function a(c) {
+    function a_a(c) {
         $(window).height() - c > $(document.body).height() ? $("#footer").addClass("footer_fix") : $("#footer").removeClass(
             "footer_fix")
     }
@@ -81,8 +81,8 @@ $(document).ready(function () {
 
         rt();
 
-    }), a(0), $(window).resize(function () {
-        a($("#footer").hasClass("footer_fix") ? 68 : 0)
+    }), a_a(0), $(window).resize(function () {
+        a_a($("#footer").hasClass("footer_fix") ? 68 : 0)
     })
     /*回到顶部代码*/
 

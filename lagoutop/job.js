@@ -2,30 +2,36 @@
  * Created by angelqiqi on 2016/6/24.
  */
 
-/*最热职位 最新职位 切换*/
-    $(function()  {
+$(function()  {
+        //获取登录用户
+       if($.cookie("loginname")){
+        $("#loginname").html($.cookie('loginname'));
+         $(".bl").hide();
+       }
+       // 最热职位 最新职位 切换
+        
         $("#jobTab li").bind("click",
             function () {
                 $(this).addClass("current").siblings().removeClass("current");
              
 
-            }),
+            });
         
         $(".hotTab").bind("click",
             function () {
                 $("#jobList").removeClass("dn");
                 $("#new_posHotPosition").addClass("dn");
 
-        }),
+        });
 
         $(".newTab").bind("click",
             function () {
                 $("#jobList").addClass("dn");
                 $("#new_posHotPosition").removeClass("dn");
 
-            })
+            });
 
-        /*最热职位 最新职位 切换*/
+        
 
 
 /*滚动最底部loginToolBar效果*/

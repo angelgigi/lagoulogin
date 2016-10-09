@@ -3,10 +3,6 @@
  */
 $(document).ready(function () {
 
-  // $(".btn.btn_outline").click(function () {
-  //     $(this).toggleClass("btn_active")
-  // });
-
     $(".input_item > .btn_outline").each(function(){$(this).click(function(){$(this).addClass("btn_active").siblings().removeClass("btn_active")})});
 
 

@@ -5,8 +5,7 @@
     <title>lagoutop</title>
     <link href="../bootstrap.css">
     <link href="lagoutop.css" rel="stylesheet" type="text/css">
-
-<script type="text/javascript" src="hovercustom.js"></script>
+     <script type="text/javascript" src="hovercustom.js"></script>
 
 </head>
 <body>
@@ -23,8 +22,13 @@
 
            <div id="lg_rbar">
                <ul>
-                   <li><a href="http://localhost:63342/lagoulogin/lagoulogin/lagoulogin.html" target="_blank">登录</a></li>
+                   <li><a href="http://localhost:63342/lagoulogin/lagoulogin/lagoulogin.html" target="_blank" class="bl">登录</a></li>
                    <li><a href="#"  target="_blank" class="bl">注册</a></li>
+                   <li><a class="news">消息</a></li>
+                   <li><a class="jl">我的简历</a></li>
+                   <li><a class="jl">投递箱</a></li>
+                   <li><a class="jl">收藏夹</a></li>
+                   <li><a class="jl" id="loginname"></a></li>
                </ul>
            </div>
         </div>
@@ -932,501 +936,39 @@
              <li class="newTab">最新职位</li>
          </ul>
          <div class="job_list clearfix" id="jobList">
-             <ul class="clearfix">
-                 <li class="position_list_item"  data-jobId = "1987121" data-positionid="1987121" data-salary="15k-25k" data-company="银天下科技" data-positionname="C++软件工程师" data-companyid="16975">
+             <ul class="clearfix" data-bind="foreach:jobsHot">
+                 <li class="position_list_item"  data-jobId = "1987121" data-positionid="1987121"  data-companyid="16975">
                      <div class="pli_top">
                          <div class="fl pli_top_l">
                              <div class="position_name">
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/1987121.html" target="_blank" class="position_link fl wordCut" data-index="0" data-lg-tj-id="rx00" data-lg-tj-no="0001" data-lg-tj-cid="1987121">C++软件工程师<span>[上海]</span></a></h2>
+                                 <h2 class="fl">
+                                     <a href="http://www.lagou.com/jobs/1987121.html" target="_blank" class="position_link fl wordCut" data-index="0" data-lg-tj-id="rx00" data-lg-tj-no="0001" data-lg-tj-cid="1987121" data-bind="text:positionName" ></a>
+                                     <span data-bind="text:citanddistrict">  </span>
+                                 </h2>
                                  <!-- 此处需要和后台确认 -->
-                                 <span class="fl">2016-06-20</span>
+                                 <span data-bind="text:createTimeStr" class="fl"> </span>
                              </div>
                              <div>
-                                 <span class="salary fl">15k-25k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>本科</span>
+                                 <span data-bind="text:salary"  class="salary fl"> </span>
+                                 <span data-bind="text:workYear"></span> / <span data-bind="text:education"></span>
                              </div>
                          </div>
                          <div class="fr pli_top_r">
                              <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/16975.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0001" data-lg-tj-cid="16975">银天下科技</a>
+                                 <a data-bind="text:companyShortName" href="http://www.lagou.com/gongsi/16975.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0001" data-lg-tj-cid="16975"></a>
                              </div>
                              <div class="industry wordCut">
-                                 <span> 金融</span> / <span>上市公司</span>
+                                 <span data-bind="text:positionType"></span> / <span data-bind="text:financeStage"></span>
                              </div>
                          </div>
                      </div>
                      <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “互联网金融，高薪，高福利，发展空间大。”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>绩效奖金</span>
-                             <span>五险一金</span>
-                             <span>带薪年假</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "441999" data-positionid="441999" data-salary="15k-25k" data-company="惠租车" data-positionname=".Net 工程师[资深]" data-companyid="22298">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
+                         <div data-bind="text:('“'+ positionAdvantage+'”')" class="pli_btm_l fl wordCut">
 
+                         </div>
+                         <div data-bind="foreach:companyLabelListArry" class="pli_btm_r fl">
+                             <span data-bind="text:$data,visible:$data.length > 0"> </span>
 
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/441999.html" target="_blank" class="position_link fl wordCut" data-index="1" data-lg-tj-id="rx00" data-lg-tj-no="0002" data-lg-tj-cid="441999">.Net 工程师[资深]<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">2016-06-20</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">15k-25k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验5-10年</span> / <span>学历不限</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/22298.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0002" data-lg-tj-cid="22298">惠租车</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 旅游</span> / <span>成长型(B轮)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “技术驱动 拥抱开源 CodeTalk”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>专项奖金</span>
-                             <span>股票期权</span>
-                             <span>年终奖金</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "970066" data-positionid="970066" data-salary="10k-15k" data-company="生意专家" data-positionname=".NET开发工程师" data-companyid="7254">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-
-
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/970066.html" target="_blank" class="position_link fl wordCut" data-index="2" data-lg-tj-id="rx00" data-lg-tj-no="0003" data-lg-tj-cid="970066">.NET开发工程师<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:19发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">10k-15k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/7254.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0003" data-lg-tj-cid="7254">生意专家</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网 · O2O</span> / <span>成长型(A轮)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “春风十里不如你 来生意专家遇见全新的自己”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>我们没有那么</span>
-                             <span>多无聊的标签</span>
-                             <span>一家创业公司</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1429734" data-positionid="1429734" data-salary="18k-27k" data-company="点融网" data-positionname="高级软件开发工程师-Web后台-SH12209" data-companyid="23177">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-
-
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/1429734.html" target="_blank" class="position_link fl wordCut" data-index="3" data-lg-tj-id="rx00" data-lg-tj-no="0004" data-lg-tj-cid="1429734">高级软件开发工程师-Web...<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:54发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">18k-27k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验3-5年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/23177.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0004" data-lg-tj-cid="23177">点融网</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 金融</span> / <span>成熟型(C轮)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “互联网大牛带领的活力四射的团队”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>节日礼物</span>
-                             <span>带薪年假</span>
-                             <span>岗位晋升</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "2026844" data-positionid="2026844" data-salary="10k-15k" data-company="易鑫资本" data-positionname="Java开发工程师" data-companyid="91177">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-
-
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/2026844.html" target="_blank" class="position_link fl wordCut" data-index="4" data-lg-tj-id="rx00" data-lg-tj-no="0005" data-lg-tj-cid="2026844">Java开发工程师<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:54发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">10k-15k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/91177.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0005" data-lg-tj-cid="91177">易鑫资本</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网</span> / <span>成熟型(不需要融资)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “五险一金 补充医疗 绩效奖金 优秀团队”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>带薪年假</span>
-                             <span>绩效奖金</span>
-                             <span>定期体检</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1846717" data-positionid="1846717" data-salary="25k-40k" data-company="携程" data-positionname="Docker软件架构师" data-companyid="6636">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-
-
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/1846717.html" target="_blank" class="position_link fl wordCut" data-index="5" data-lg-tj-id="rx00" data-lg-tj-no="0006" data-lg-tj-cid="1846717">Docker软件架构师<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:54发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">25k-40k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验5-10年</span> / <span>学历不限</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/6636.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0006" data-lg-tj-cid="6636">携程</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网 · 旅游</span> / <span>上市公司</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “股票期权、奖金丰厚、旅游福利、弹性工时”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>绩效奖金</span>
-                             <span>股票期权</span>
-                             <span>五险一金</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "2026840" data-positionid="2026840" data-salary="8k-10k" data-company="贝联" data-positionname="广告客户经理/广告销售经理-宝山" data-companyid="15375">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/2026840.html" target="_blank" class="position_link fl wordCut" data-index="6" data-lg-tj-id="rx00" data-lg-tj-no="0007" data-lg-tj-cid="2026840">广告客户经理/广告销售经理-宝山<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:54发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">8k-10k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>大专</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/15375.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0007" data-lg-tj-cid="15375">贝联</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网</span> / <span>成长型(B轮)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “良好的薪酬和发展空间”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>绩效奖金</span>
-                             <span>五险一金</span>
-                             <span>通讯津贴</span>
-                         </div>
-                     </div>
-                 </li>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1990797" data-positionid="1990797" data-salary="20k-40k" data-company="哔哩哔哩" data-positionname="策略总监" data-companyid="30830">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-
-
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/1990797.html" target="_blank" class="position_link fl wordCut" data-index="7" data-lg-tj-id="rx00" data-lg-tj-no="0008" data-lg-tj-cid="1990797">策略总监<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:53发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">20k-40k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验5-10年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/30830.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0008" data-lg-tj-cid="30830">哔哩哔哩</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网 · 文化娱乐</span> / <span>初创型(未融资)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “商业产品,商业策略,销售模型”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>带薪年假</span>
-                             <span>扁平管理</span>
-                             <span>绩效奖金</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1751769" data-positionid="1751769" data-salary="18k-35k" data-company="冻果科技" data-positionname="资深iOS工程师" data-companyid="118049">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-
-
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/1751769.html" target="_blank" class="position_link fl wordCut" data-index="8" data-lg-tj-id="rx00" data-lg-tj-no="0009" data-lg-tj-cid="1751769">资深iOS工程师<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:52发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">18k-35k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验3-5年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/118049.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0009" data-lg-tj-cid="118049">冻果科技</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 教育 · 移动互联网</span> / <span>初创型(天使轮)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “IOS专家直带，精英团队，高薪福利”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>年底双薪</span>
-                             <span>股票期权</span>
-                             <span>节日礼物</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "2018430" data-positionid="2018430" data-salary="8k-12k" data-company="台骅国际" data-positionname="C#" data-companyid="135925">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-
-
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/2018430.html" target="_blank" class="position_link fl wordCut" data-index="9" data-lg-tj-id="rx00" data-lg-tj-no="0010" data-lg-tj-cid="2018430">C#<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:52发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">8k-12k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>大专</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/135925.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0010" data-lg-tj-cid="135925">台骅国际</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 其他</span> / <span>上市公司</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “五险一金，餐饮补贴，绩效奖金，年终奖金”
-                         </div>
-                         <div class="pli_btm_r fl">
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1864109" data-positionid="1864109" data-salary="10k-20k" data-company="小圈" data-positionname="高级编辑" data-companyid="95490">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-
-
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/1864109.html" target="_blank" class="position_link fl wordCut" data-index="10" data-lg-tj-id="rx00" data-lg-tj-no="0011" data-lg-tj-cid="1864109">高级编辑<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:51发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">10k-20k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验3-5年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/95490.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0011" data-lg-tj-cid="95490">小圈</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网 · 社交网络</span> / <span>初创型(天使轮)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “扁平化管理，团队氛围好，福利好”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>年底双薪</span>
-                             <span>股票期权</span>
-                             <span>绩效奖金</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1671512" data-positionid="1671512" data-salary="7k-13k" data-company="点赞网" data-positionname="数据挖掘" data-companyid="9549">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-
-
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/1671512.html" target="_blank" class="position_link fl wordCut" data-index="11" data-lg-tj-id="rx00" data-lg-tj-no="0012" data-lg-tj-cid="1671512">数据挖掘<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:50发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">7k-13k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>学历不限</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/9549.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0012" data-lg-tj-cid="9549">点赞网</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 电子商务 · 社交网络</span> / <span>成长型(不需要融资)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “年轻富有朝气的团队，一年三次涨薪机会”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>股票期权</span>
-                             <span>专项奖金</span>
-                             <span>交通补助</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1329521" data-positionid="1329521" data-salary="15k-25k" data-company="容易网" data-positionname="PHP" data-companyid="19241">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-
-
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/1329521.html" target="_blank" class="position_link fl wordCut" data-index="12" data-lg-tj-id="rx00" data-lg-tj-no="0013" data-lg-tj-cid="1329521">PHP<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:49发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">15k-25k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验3-5年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/19241.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0013" data-lg-tj-cid="19241">容易网</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 电子商务 · O2O</span> / <span>上市公司</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “发展前景好”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>技能培训</span>
-                             <span>节日礼物</span>
-                             <span>绩效奖金</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1590611" data-positionid="1590611" data-salary="10k-16k" data-company="网钱" data-positionname="C++" data-companyid="33116">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <!--  -->
-
-
-                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/1590611.html" target="_blank" class="position_link fl wordCut" data-index="13" data-lg-tj-id="rx00" data-lg-tj-no="0014" data-lg-tj-cid="1590611">C++<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">10:49发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">10k-16k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验3-5年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/33116.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0014" data-lg-tj-cid="33116">网钱</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 金融</span> / <span>成长型(A轮)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “花园别墅办公；免费午餐”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>股票期权</span>
-                             <span>带薪年假</span>
-                             <span>绩效奖金</span>
                          </div>
                      </div>
                  </li>
@@ -1435,521 +977,36 @@
          </div>
 
          <div class="new_posHotPosition position_list dn" id="new_posHotPosition" >
-             <ul class="clearfix">
-                 <li class="position_list_item"  data-jobId = "2027657" data-positionid="2027657" data-salary="3k-4k" data-company="森知国际" data-positionname="淘宝客服" data-companyid="109778">
+             <ul class="clearfix" data-bind="foreach:jobsNew">
+                 <li class="position_list_item"  data-jobId = "1987121" data-positionid="1987121"  data-companyid="16975">
                      <div class="pli_top">
                          <div class="fl pli_top_l">
                              <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/2027657.html" target="_blank" class="position_link fl wordCut" data-index="0" data-lg-tj-id="4q00" data-lg-tj-no="0001" data-lg-tj-cid="2027657">淘宝客服<span>[上海]</span></a></h2>
+                                 <h2 class="fl"><a href="http://www.lagou.com/jobs/1987121.html" target="_blank" class="position_link fl wordCut" data-index="0" data-lg-tj-id="rx00" data-lg-tj-no="0001" data-lg-tj-cid="1987121" data-bind="text:positionName" ></a> <span data-bind="text:citanddistrict">  </span></h2>
                                  <!-- 此处需要和后台确认 -->
-                                 <span class="fl">12:02发布</span>
+                                 <span data-bind="text:createTimeStr" class="fl"> </span>
                              </div>
                              <div>
-                                 <span class="salary fl">3k-4k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验不限</span> / <span>学历不限</span>
+                                 <span data-bind="text:salary"  class="salary fl"> </span>
+                                 <span data-bind="text:workYear"></span> / <span data-bind="text:education"></span>
                              </div>
                          </div>
                          <div class="fr pli_top_r">
                              <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/109778.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0001" data-lg-tj-cid="109778">森知国际</a>
+                                 <a data-bind="text:companyShortName" href="http://www.lagou.com/gongsi/16975.html" target="_blank" data-lg-tj-id="vz00" data-lg-tj-no="0001" data-lg-tj-cid="16975"></a>
                              </div>
                              <div class="industry wordCut">
-                                 <span> 电子商务</span> / <span>成长型(不需要融资)</span>
+                                 <span data-bind="text:positionType"></span> / <span data-bind="text:financeStage"></span>
                              </div>
                          </div>
                      </div>
                      <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “餐补，领用公司产品。。。”
-                         </div>
-                         <div class="pli_btm_r fl">
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1710920" data-positionid="1710920" data-salary="15k-25k" data-company="上海灵肯科技有限公司" data-positionname="AAD（客户总监）" data-companyid="51255">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
+                         <div data-bind="text:('“'+ positionAdvantage+'”')" class="pli_btm_l fl wordCut">
 
-                                     <a href="http://www.lagou.com/jobs/1710920.html" target="_blank" class="position_link fl wordCut" data-index="1" data-lg-tj-id="4q00" data-lg-tj-no="0002" data-lg-tj-cid="1710920">AAD（客户总监）<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">12:01发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">15k-25k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验3-5年</span> / <span>大专</span>
-                             </div>
                          </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/51255.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0002" data-lg-tj-cid="51255">上海灵肯科技有限公司</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网</span> / <span>初创型(天使轮)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “股票期权”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>带薪年假</span>
-                             <span>五险一金</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1944854" data-positionid="1944854" data-salary="9k-15k" data-company="上海灵肯科技有限公司" data-positionname=".NET高级软件工程师-L" data-companyid="51255">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
+                         <div data-bind="foreach:companyLabelListArry" class="pli_btm_r fl">
+                             <span data-bind="text:$data,visible:$data.length > 0"> </span>
 
-                                     <a href="http://www.lagou.com/jobs/1944854.html" target="_blank" class="position_link fl wordCut" data-index="2" data-lg-tj-id="4q00" data-lg-tj-no="0003" data-lg-tj-cid="1944854">.NET高级软件工程师-L<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">12:01发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">9k-15k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验3-5年</span> / <span>大专</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/51255.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0003" data-lg-tj-cid="51255">上海灵肯科技有限公司</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网</span> / <span>初创型(天使轮)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “互联网公司，机会多多！！”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>带薪年假</span>
-                             <span>五险一金</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "2027647" data-positionid="2027647" data-salary="6k-10k" data-company="学费全免网" data-positionname="法务律师" data-companyid="60249">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/2027647.html" target="_blank" class="position_link fl wordCut" data-index="3" data-lg-tj-id="4q00" data-lg-tj-no="0004" data-lg-tj-cid="2027647">法务律师<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">12:00发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">6k-10k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/60249.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0004" data-lg-tj-cid="60249">学费全免网</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 电子商务 · 教育</span> / <span>成长型(不需要融资)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “团队氛围好”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>技能培训</span>
-                             <span>带薪年假</span>
-                             <span>绩效奖金</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "2027641" data-positionid="2027641" data-salary="5k-8k" data-company="巨米传媒" data-positionname="产品策划" data-companyid="130668">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/2027641.html" target="_blank" class="position_link fl wordCut" data-index="4" data-lg-tj-id="4q00" data-lg-tj-no="0005" data-lg-tj-cid="2027641">产品策划<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">12:00发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">5k-8k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>大专</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/130668.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0005" data-lg-tj-cid="130668">巨米传媒</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网 · 电子商务</span> / <span>成长型(不需要融资)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “发展空间大 办公环境佳 工作氛围好”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>节日礼物</span>
-                             <span>领导好</span>
-                             <span>美女多</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "2027640" data-positionid="2027640" data-salary="8k-12k" data-company="美丽神器" data-positionname="APP电商运营" data-companyid="15753">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/2027640.html" target="_blank" class="position_link fl wordCut" data-index="5" data-lg-tj-id="4q00" data-lg-tj-no="0006" data-lg-tj-cid="2027640">APP电商运营<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">12:00发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">8k-12k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>大专</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/15753.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0006" data-lg-tj-cid="15753">美丽神器</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网 · O2O</span> / <span>成长型(B轮)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “节假日福利、体检、年终奖”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>绩效奖金</span>
-                             <span>股票期权</span>
-                             <span>专项奖金</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1995429" data-positionid="1995429" data-salary="8k-15k" data-company="赟海信息" data-positionname="测试工程师" data-companyid="114934">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/1995429.html" target="_blank" class="position_link fl wordCut" data-index="6" data-lg-tj-id="4q00" data-lg-tj-no="0007" data-lg-tj-cid="1995429">测试工程师<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">11:59发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">8k-15k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>大专</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/114934.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0007" data-lg-tj-cid="114934">赟海信息</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 金融</span> / <span>成长型(不需要融资)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “互联网金融平台，发展快，气氛好”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>年底双薪</span>
-                             <span>专项奖金</span>
-                             <span>带薪年假</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "1394933" data-positionid="1394933" data-salary="15k-25k" data-company="天地宽视" data-positionname="Windows应用软件工程师（高薪急聘）" data-companyid="60023">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/1394933.html" target="_blank" class="position_link fl wordCut" data-index="7" data-lg-tj-id="4q00" data-lg-tj-no="0008" data-lg-tj-cid="1394933">Windows应用软件工程...<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">11:59发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">15k-25k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/60023.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0008" data-lg-tj-cid="60023">天地宽视</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 硬件</span> / <span>成熟型(D轮及以上)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “新三板上市 薪酬福利待遇好”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>股票期权</span>
-                             <span>带薪年假</span>
-                             <span>年底双薪</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "560341" data-positionid="560341" data-salary="15k-25k" data-company="天地宽视" data-positionname="硬件工程师（高薪诚聘)" data-companyid="60023">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/560341.html" target="_blank" class="position_link fl wordCut" data-index="8" data-lg-tj-id="4q00" data-lg-tj-no="0009" data-lg-tj-cid="560341">硬件工程师（高薪诚聘)<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">11:59发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">15k-25k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验3-5年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/60023.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0009" data-lg-tj-cid="60023">天地宽视</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 硬件</span> / <span>成熟型(D轮及以上)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “平台广阔，晋升机会多，13-17薪”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>股票期权</span>
-                             <span>带薪年假</span>
-                             <span>年底双薪</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "2027626" data-positionid="2027626" data-salary="6k-12k" data-company="上海鲲弛贸易发展有限公司" data-positionname="平面设计师" data-companyid="11515">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/2027626.html" target="_blank" class="position_link fl wordCut" data-index="9" data-lg-tj-id="4q00" data-lg-tj-no="0010" data-lg-tj-cid="2027626">平面设计师<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">11:58发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">6k-12k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>大专</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/11515.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0010" data-lg-tj-cid="11515">上海鲲弛贸易发展有限公司</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 电子商务</span> / <span>初创型(未融资)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “五险一金、绩效奖金、餐补、话补”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>带薪年假</span>
-                             <span>午餐补助</span>
-                             <span>交通补助</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "2027625" data-positionid="2027625" data-salary="20k-30k" data-company="富友电商" data-positionname="资深JAVA/架构" data-companyid="115346">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/2027625.html" target="_blank" class="position_link fl wordCut" data-index="10" data-lg-tj-id="4q00" data-lg-tj-no="0011" data-lg-tj-cid="2027625">资深JAVA/架构<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">11:58发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">20k-30k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验3-5年</span> / <span>学历不限</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/115346.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0011" data-lg-tj-cid="115346">富友电商</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> O2O · 电子商务</span> / <span>成熟型(不需要融资)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “5险1金+补充公积金、带薪年假、体检、旅行”
-                         </div>
-                         <div class="pli_btm_r fl">
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "2027624" data-positionid="2027624" data-salary="10k-15k" data-company="巨米传媒" data-positionname="Java开发工程师" data-companyid="130668">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/2027624.html" target="_blank" class="position_link fl wordCut" data-index="11" data-lg-tj-id="4q00" data-lg-tj-no="0012" data-lg-tj-cid="2027624">Java开发工程师<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">11:58发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">10k-15k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>学历不限</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/130668.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0012" data-lg-tj-cid="130668">巨米传媒</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网 · 电子商务</span> / <span>成长型(不需要融资)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “发展空间大 办公环境佳 工作氛围好”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>节日礼物</span>
-                             <span>领导好</span>
-                             <span>美女多</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "498683" data-positionid="498683" data-salary="10k-15k" data-company="快速递 Ksudi" data-positionname="客服经理" data-companyid="40529">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/498683.html" target="_blank" class="position_link fl wordCut" data-index="12" data-lg-tj-id="4q00" data-lg-tj-no="0013" data-lg-tj-cid="498683">客服经理<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">11:58发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">10k-15k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验5-10年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/40529.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0013" data-lg-tj-cid="40529">快速递 Ksudi</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网 · 生活服务</span> / <span>成长型(A轮)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “五险一金、股票期权、带薪年假、员工旅游”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>技能培训</span>
-                             <span>年底双薪</span>
-                             <span>股票期权</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "2027614" data-positionid="2027614" data-salary="15k-20k" data-company="亿动广告传媒(Madhouse)" data-positionname="新媒体运营" data-companyid="8137">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/2027614.html" target="_blank" class="position_link fl wordCut" data-index="13" data-lg-tj-id="4q00" data-lg-tj-no="0014" data-lg-tj-cid="2027614">新媒体运营<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">11:58发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">15k-20k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验5-10年</span> / <span>本科</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/8137.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0014" data-lg-tj-cid="8137">亿动广告传媒(Madhouse)</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 移动互联网 · 广告营销</span> / <span>成熟型(D轮及以上)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “DSP运营”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>年底双薪</span>
-                             <span>带薪年假</span>
-                             <span>年度旅游</span>
-                         </div>
-                     </div>
-                 </li>
-                 <li class="position_list_item"  data-jobId = "2027611" data-positionid="2027611" data-salary="5k-8k" data-company="劲霸男装" data-positionname="京东运营专员" data-companyid="9857">
-                     <div class="pli_top">
-                         <div class="fl pli_top_l">
-                             <div class="position_name">
-                                 <h2 class="fl">
-
-                                     <a href="http://www.lagou.com/jobs/2027611.html" target="_blank" class="position_link fl wordCut" data-index="14" data-lg-tj-id="4q00" data-lg-tj-no="0015" data-lg-tj-cid="2027611">京东运营专员<span>[上海]</span></a></h2>
-                                 <!-- 此处需要和后台确认 -->
-                                 <span class="fl">11:57发布</span>
-                             </div>
-                             <div>
-                                 <span class="salary fl">5k-8k</span>
-                                 <span><!-- <i class="experience"></i>&nbsp;  -->经验1-3年</span> / <span>大专</span>
-                             </div>
-                         </div>
-                         <div class="fr pli_top_r">
-                             <div class="company_name wordCut">
-                                 <a href="http://www.lagou.com/gongsi/9857.html" target="_blank" data-lg-tj-id="4r00" data-lg-tj-no="0015" data-lg-tj-cid="9857">劲霸男装</a>
-                             </div>
-                             <div class="industry wordCut">
-                                 <span> 招聘</span> / <span>初创型(未融资)</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="pli_btm">
-                         <div class="pli_btm_l fl wordCut">
-                             “多倍年终奖、公司氛围好、个人发展空间大”
-                         </div>
-                         <div class="pli_btm_r fl">
-                             <span>年终分红</span>
-                             <span>五险一金</span>
-                             <span>通讯津贴</span>
                          </div>
                      </div>
                  </li>
@@ -2064,8 +1121,11 @@
 
 <!--中部方向感知鼠标滑过图片遮罩效果-->
 <script type="text/javascript" src="../jquery-2.0.0.min.js"></script>
+<script src="../jquery.cookie.js"></script>
+<script src="../knockout-3.0.0.js"></script>
 <script type="text/javascript" src="jquery.hoverdir.js"></script>
 <script src="job.js" type="text/javascript"></script>
+<script type="text/javascript" src="ViewModel/ViewModel.js"></script>
 <script type="text/javascript">
     $(function() {
 

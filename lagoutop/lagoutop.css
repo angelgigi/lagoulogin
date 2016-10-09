@@ -134,6 +134,9 @@ dl,dt,dd{
 #lg_rbar a.bl {
     border-left: 1px solid #5d5d5d;
 }
+#lg_rbar a.jl{
+    border-left: 1px solid #5d5d5d;
+}
 #lg_nav{
     min-width: 1024px;
     height: 54px;

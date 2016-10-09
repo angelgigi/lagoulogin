@@ -928,6 +928,9 @@ ul.order .wrapper .item.page .page-number .curNum {
 .history .p_list_item a {
     display: block;
 }
+.history .p_list_item a:hover{
+    color: #00b38a;
+}
 .history .p_list_item .salary {
     color: #fd5f39;
     height: 20px;

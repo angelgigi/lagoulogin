@@ -1,12 +1,27 @@
 /**
  * Created by angelqiqi on 2016/6/16.
  */
-$(document).ready(function(){
-    $("#btnLogin").click(function(){
-        var username=document.getElementById("username").value;
-        var password=document.getElementById("password").value;
+var CheckValue={
+    checkUserNameResult:null,
+    checkPasswordResult:null,
+    btnLogin:null,
+    password:null,
+    username:null,
 
-        if(password!=""&&username!=""){
+    InitData: function () {
+        this.checkUserNameResult=$("#checkUsernameResult");
+        this.checkPasswordResult=$("#checkPasswordResult");
+        this.password=$("#password");
+        this.username=$("#username");
+        this.btnLogin=$("#btnLogin");
+    },
+    setCookie:function (name,value,iDay) {
+        var oDate=new Date();
+        oDate.setDate(oDate.getDate()+iDay);
+        document.cookie=name+'='+value+';expires='+oDate;
+    },
+    login:function () {
+        if(username!=""&&password!=""){
             $.ajax({
                 type: "POST",
                 url: "http://192.168.1.103:8010/api/login",
@@ -14,7 +29,12 @@ $(document).ready(function(){
                 //回调函数：调用后回来执行
                 success: function (data) {
                     if(data.Code=="Sucess") {
-                        window.location.href="../lagoutop/lagoutop.html"
+
+                        
+
+                        CheckValue.setCookie("username", data.Data.UserName,1);
+                        window.location.href="http://localhost:63342/lagoulogin/lagoutop/lagoutop.html"
+
                     }
                     else
                     {
@@ -24,50 +44,54 @@ $(document).ready(function(){
 
                 }
             });
-        } if(password==""){
-            checkPasswordResult.innerHTML="请输入密码";
-        } if(username==""){
-            checkUserNameResult.innerHTML="请输入已验证手机/邮箱";
+        }if ($.trim(this.username.val())=== ""|| $.trim(this.password.val())=== "")
+        {
+            this.checkPasswordResult.html("请输入手机号或密码");
+
         }
 
-    });
-
-    $("#username").blur(function () {
-        checkValue(1);
-    });
-    $("#password").blur(function () {
-        checkValue(2)
-    })
-});
-
-
-
-
-
-
-function checkValue(obj){
-    var checkUserNameResult=document.getElementById("checkUserNameResult");
-    var checkPasswordResult=document.getElementById("checkPasswordResult");
-    var username=document.getElementById("username").value;
-    var password=document.getElementById("password").value;
-
-    if(obj==1)
-    {
-        if(username.trim().length==0){
-            checkUserNameResult.innerHTML="请输入已验证手机/邮箱";
+    },
+    //取输入框值
+    inputusername:function () {
+        if($.trim(this.username.val()).length==0) {
+            checkUserNameResult.innerHTML = "请输入已验证手机/邮箱";
         }else{
-            checkUserNameResult.innerHTML="";
+            checkUserNameResult.innerHTML =""
+        }
 
-        }}
+    },
 
-    if(obj==2)
-    {
-        if(password.trim().length==0){
+    inputpassword:function () {
+        if($.trim(this.password.val()).length==0){
             checkPasswordResult.innerHTML="请输入密码";
         }else{
-            checkPasswordResult.innerHTML="";
+            checkPasswordResult.innerHTML =""
         }
     }
 
-}
+
+};
+
+$(document).ready(function () {
+    CheckValue.InitData();
+    CheckValue.btnLogin.click(function () {
+        CheckValue.login()
+
+    });
+    CheckValue.username.blur(function () {
+        CheckValue.inputusername()
+    });
+    CheckValue.password.blur(function () {
+        CheckValue.inputpassword()
+    });
+
+
+
+    // 回车事件绑定
+    CheckValue.password.bind('keypress', function (event) {
+        if (event.keyCode == "13") {
+            CheckValue.login();
+        }
+    });
+});
 
