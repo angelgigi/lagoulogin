@@ -1,6 +1,7 @@
 /**
  * Created by angelqiqi on 2016/6/16.
  */
+
 var CheckValue={
     checkUserNameResult:null,
     checkPasswordResult:null,
@@ -29,22 +30,19 @@ var CheckValue={
                 //回调函数：调用后回来执行
                 success: function (data) {
                     if(data.Code=="Sucess") {
-
-                        
-
-                        CheckValue.setCookie("username", data.Data.UserName,1);
-                        window.location.href="http://localhost:63342/lagoulogin/lagoutop/lagoutop.html"
-
+                   CheckValue.setCookie("username", data.Data.UserName,1);
+                        window.location.href="/lagoulogin/lagoutop/lagoutop.html"
                     }
                     else
                     {
-                        checkPasswordResult.innerHTML = data.Message;
-
+                       // alert("yong");
+                        CheckValue.checkPasswordResult.html(data.Message);
                     }
 
                 }
             });
-        }if ($.trim(this.username.val())=== ""|| $.trim(this.password.val())=== "")
+        }
+        if ($.trim(this.username.val())=== ""|| $.trim(this.password.val())=== "")
         {
             this.checkPasswordResult.html("请输入手机号或密码");
 
